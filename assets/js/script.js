@@ -7,14 +7,20 @@ var divEl = document.createElement('div');
 var h1El = document.createElement('h1');
 var pEl = document.createElement('p');
 var startButtonEl = document.createElement('button');
+startButtonEl.setAttribute("class", "startbuttonstyle");
 
 var questionsEl = document.getElementById('questions-container');
 var questionEl = document.createElement('h2');
 var answersEl = document.createElement('div');
+answersEl.setAttribute("class", "questionstyle")
 var aEl = document.createElement('button');
+aEl.setAttribute("class", "buttonstyle");
 var bEl = document.createElement('button');
+bEl.setAttribute("class", "buttonstyle");
 var cEl = document.createElement('button');
+cEl.setAttribute("class", "buttonstyle");
 var dEl = document.createElement('button');
+dEl.setAttribute("class", "buttonstyle");
 var questionNumber = 0 
 
 var questionsArr = [ 
@@ -43,15 +49,15 @@ var questionsArr = [
         question: "Arrays in JavaScript can be used to store _____.",
         a: "1. numbers and strings",
         b: "2. other arrays",
-        c: "4. all answers are correct",
-        d: "3. booleans"
+        c: "3. all answers are correct",
+        d: "4. booleans"
     },
     {
         question: "A very useful too during development and debugging for printing content to the debugger is:",
         a: "1. JavaScript",
         b: "2. terminal/bash",
-        c: "4. console.log",
-        d: "3. for loops"
+        c: "3. console.log",
+        d: "4. for loops"
     }
 ];
 
@@ -96,6 +102,7 @@ var nextQuestion = function() {
         questionNumber++; 
     } else {
         alert("Quiz Complete! Let's see how you did!")
+        finalscore();
     }
 };
 
@@ -105,6 +112,15 @@ var removeQuestion = function() {
     answersEl.removeChild(bEl);
     answersEl.removeChild(cEl);
     answersEl.removeChild(dEl);
+}
+
+var finalscore = function() {
+    removeQuestion();
+    h1El.textContent = "All done!"
+    pEl.textContent = "Your final score is " + timeLeft;
+    instructionsEl.appendChild(h1El);
+    instructionsEl.appendChild(pEl);
+    timeLeft = 0; 
 }
 
 startButtonEl.addEventListener("click", function() {

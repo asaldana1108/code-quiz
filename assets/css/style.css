@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -5,4 +9,37 @@
 }
 .instructions {
     text-align: center;
+    padding: 0px 50px 0px 50px;
+}
+.startbuttonstyle {
+    background-color: #2d0b72;
+    color: white;
+    border-radius: 12px;
+    padding: 10px; 
+    width: 30%;
+    align-items: center;
+    font-size: 20px;
+}
+
+.questions {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    align-items: center;
+}
+.questionstyle {
+    margin: 30px; 
+    display: flex;
+    flex-direction: column;
+}
+.buttonstyle {
+    background-color: #2d0b72;
+    color: white;
+    border-radius: 12px;
+    width: 200px;
+    padding: 10px; 
+    margin: 5px;
+    align-items: center;
+    text-align: left;
+    font-size: 18px;
 }
